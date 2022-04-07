@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-chat-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-chat-app
+  template:
+    metadata:
+      labels:
+        app: node-chat-app
+    spec:
+      containers:
+        - name: node-chat-app-aire
+          image: public.ecr.aws/g3b4c6d8/node-chat-app-aire:latest
+          ports:
+            - containerPort: 3000
+          #  env:
+          #   - name:

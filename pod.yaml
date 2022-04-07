@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    zone: prod
+    version: v1
+spec:
+  containers:
+    - name: hello-ctr
+      image: public.ecr.aws/g3b4c6d8/node-chat-app-aire:latest
+      ports:
+        - containerPort: 3000
